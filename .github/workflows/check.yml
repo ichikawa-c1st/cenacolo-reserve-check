@@ -2,7 +2,7 @@ name: Ticket Availability Monitor
 
 on:
   schedule:
-    # 15分ごとに自動実行 (UTC時間)
+    # 1分ごとに自動実行 (UTC時間)
     - cron: '* * * * *'
   workflow_dispatch: # GitHub画面から手動実行ボタンも提供
 
