@@ -8,7 +8,7 @@ WEBHOOK_URL = os.environ.get("WEBHOOK_URL")
 # 監視対象のURLリスト（追加したいURLをここに並べます）
 TARGET_URLS = [
     "https://cenacolovinciano.vivaticket.it/en/event/cenacolo-vinciano/151991?idt=2547",
-    "追加したいURLをここに記述（例: https://cenacolovinciano.vivaticket.it/en/event/...）"
+    "https://cenacolovinciano.vivaticket.it/en/event/cenacolo-visite-guidate-a-orario-fisso-in-inglese/238363?idt=2547&qubsq=1846e72a-9c8c-43fa-9506-17c29e100aac&qubsp=a2c94ae9-9d92-4cd2-b927-c593f19bbc27&qubsts=1788353106&qubsc=bestunion&qubse=cenacolovinciano&qubsrt=Safetynet&qubsh=24501a442e36b1fd1bd5724a41638e43"
 ]
 
 def send_google_chat_notification(message):
