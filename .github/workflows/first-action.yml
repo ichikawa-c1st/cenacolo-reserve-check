@@ -1,0 +1,15 @@
+# ワークフロー（自動処理）の名前
+name: Hello World Test
+
+# トリガー：いつ実行するか
+on:
+  workflow_dispatch: # GitHubの画面から手動で実行できるようにする設定
+
+# 実行する処理の内容
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest # GitHubが用意してくれる実行環境（Linux）
+    
+    steps:
+      - name: ログにメッセージを出力する
+        run: echo "Hello, World! GitHub Actionsが動きました！"
