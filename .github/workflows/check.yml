@@ -27,5 +27,5 @@ jobs:
 
       - name: Run ticket checker
         env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
         run: python check_ticket.py
