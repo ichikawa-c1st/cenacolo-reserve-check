@@ -1,0 +1,31 @@
+name: Ticket Availability Monitor
+
+on:
+  schedule:
+    # 15分ごとに自動実行 (UTC時間)
+    - cron: '*/15 * * * *'
+  workflow_dispatch: # GitHub画面から手動実行ボタンも提供
+
+jobs:
+  check-ticket:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install playwright requests
+          playwright install chromium
+
+      - name: Run ticket checker
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+        run: python check_ticket.py
